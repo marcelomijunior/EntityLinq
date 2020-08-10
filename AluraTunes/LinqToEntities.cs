@@ -14,13 +14,17 @@ namespace AluraTunes
         public static void PesquisarFaixas(AluraTunesDBEntities context, string nomeArtista, string nomeAlbum)
         {
             var query = from faixa in context.Faixas
-                        where faixa.Album.Artista.Nome.Contains(nomeArtista)
+                        where faixa.Album.Artista.Nome.Contains(nomeArtista) && (!String.IsNullOrEmpty(nomeAlbum) ? faixa.Album.Titulo.Contains(nomeAlbum) : true)
+                        orderby faixa.Album.Titulo, faixa.Nome
                         select faixa;
 
-            if (!String.IsNullOrEmpty(nomeAlbum))
-            {
-                query = query.Where(q => q.Album.Titulo.Contains(nomeAlbum));
-            }
+            //if (!String.IsNullOrEmpty(nomeAlbum))
+            //{
+            //    query = query.Where(q => q.Album.Titulo.Contains(nomeAlbum));
+            //}
+
+            //ordenando por album e depois no album pelo nome das músicas.
+            //query = query.OrderBy(q => q.Album.Titulo).ThenBy(q => q.Nome);
 
             foreach (var q in query)
             {
@@ -34,7 +38,7 @@ namespace AluraTunes
             var queryPesquisa1 = from artista in context.Artistas
                                  join album in context.Albums on artista.ArtistaId equals album.ArtistaId
                                  where artista.Nome.Contains(nomeArtista)
-                                 select new { NomeArtista = artista.Nome, NomeAlbum = album.Titulo};
+                                 select new { NomeArtista = artista.Nome, NomeAlbum = album.Titulo };
             // ou
             //var queryPesquisa2 = context.Artistas
             //    .Where(a => a.Nome.Contains(textoPesquisa))

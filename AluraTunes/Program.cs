@@ -13,7 +13,7 @@ namespace AluraTunes
         {
             //criar uma consulta que deve trazer as faixas de músicas a partir de dois parâmetros. 
             //nome do artista e título do álbum.
-            
+            LinqToEntities.PesquisarFaixas(new AluraTunesDBEntities(), "Iron Maiden", "");
 
             Console.WriteLine();
             Console.WriteLine("Aperte a tecla 'enter' para finalizar a execução...");
