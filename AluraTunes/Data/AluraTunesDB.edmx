@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AluraTunesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AluraTunesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Album">
           <Key>
             <PropertyRef Name="AlbumId" />
@@ -257,7 +257,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AluraTunesDBModelStoreContainer">
+        <EntityContainer Name="AluraTunesModelStoreContainer">
           <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Artista" EntityType="Self.Artista" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
@@ -318,7 +318,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AluraTunesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="AluraTunesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Album">
           <Key>
             <PropertyRef Name="AlbumId" />
@@ -563,7 +563,7 @@
           <End Role="Faixa" Type="Self.Faixa" Multiplicity="*" />
           <End Role="Playlist" Type="Self.Playlist" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="AluraTunesDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AluraTunesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Albums" EntityType="Self.Album" />
           <EntitySet Name="Artistas" EntityType="Self.Artista" />
           <EntitySet Name="Clientes" EntityType="Self.Cliente" />
@@ -620,9 +620,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AluraTunesDBModelStoreContainer" CdmEntityContainer="AluraTunesDBEntities">
+        <EntityContainerMapping StorageEntityContainer="AluraTunesModelStoreContainer" CdmEntityContainer="AluraTunesEntities">
           <EntitySetMapping Name="Albums">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Album">
+            <EntityTypeMapping TypeName="AluraTunesModel.Album">
               <MappingFragment StoreEntitySet="Album">
                 <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
                 <ScalarProperty Name="Titulo" ColumnName="Titulo" />
@@ -631,7 +631,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Artistas">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Artista">
+            <EntityTypeMapping TypeName="AluraTunesModel.Artista">
               <MappingFragment StoreEntitySet="Artista">
                 <ScalarProperty Name="ArtistaId" ColumnName="ArtistaId" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -639,7 +639,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Cliente">
+            <EntityTypeMapping TypeName="AluraTunesModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="PrimeiroNome" ColumnName="PrimeiroNome" />
@@ -658,7 +658,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Faixas">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Faixa">
+            <EntityTypeMapping TypeName="AluraTunesModel.Faixa">
               <MappingFragment StoreEntitySet="Faixa">
                 <ScalarProperty Name="FaixaId" ColumnName="FaixaId" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -673,7 +673,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Funcionarios">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Funcionario">
+            <EntityTypeMapping TypeName="AluraTunesModel.Funcionario">
               <MappingFragment StoreEntitySet="Funcionario">
                 <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
                 <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
@@ -694,7 +694,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Generoes">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Genero">
+            <EntityTypeMapping TypeName="AluraTunesModel.Genero">
               <MappingFragment StoreEntitySet="Genero">
                 <ScalarProperty Name="GeneroId" ColumnName="GeneroId" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -702,7 +702,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemNotaFiscals">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.ItemNotaFiscal">
+            <EntityTypeMapping TypeName="AluraTunesModel.ItemNotaFiscal">
               <MappingFragment StoreEntitySet="ItemNotaFiscal">
                 <ScalarProperty Name="ItemNotaFiscalId" ColumnName="ItemNotaFiscalId" />
                 <ScalarProperty Name="NotaFiscalId" ColumnName="NotaFiscalId" />
@@ -713,7 +713,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NotaFiscals">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.NotaFiscal">
+            <EntityTypeMapping TypeName="AluraTunesModel.NotaFiscal">
               <MappingFragment StoreEntitySet="NotaFiscal">
                 <ScalarProperty Name="NotaFiscalId" ColumnName="NotaFiscalId" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
@@ -728,7 +728,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Playlists">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.Playlist">
+            <EntityTypeMapping TypeName="AluraTunesModel.Playlist">
               <MappingFragment StoreEntitySet="Playlist">
                 <ScalarProperty Name="PlaylistId" ColumnName="PlaylistId" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -736,14 +736,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoMidias">
-            <EntityTypeMapping TypeName="AluraTunesDBModel.TipoMidia">
+            <EntityTypeMapping TypeName="AluraTunesModel.TipoMidia">
               <MappingFragment StoreEntitySet="TipoMidia">
                 <ScalarProperty Name="TipoMidiaId" ColumnName="TipoMidiaId" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="PlaylistFaixa" TypeName="AluraTunesDBModel.PlaylistFaixa" StoreEntitySet="PlaylistFaixa">
+          <AssociationSetMapping Name="PlaylistFaixa" TypeName="AluraTunesModel.PlaylistFaixa" StoreEntitySet="PlaylistFaixa">
             <EndProperty Name="Faixa">
               <ScalarProperty Name="FaixaId" ColumnName="FaixaId" />
             </EndProperty>

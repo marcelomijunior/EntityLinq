@@ -9,7 +9,7 @@ namespace AluraTunes
 {
     class LinqToXml
     {
-        private static void ListarMusicas(XElement element)
+        public static void ListarMusicas(XElement element)
         {
             var query = from genero in element.Elements("Generos").Elements("Genero")
                         join musica in element.Elements("Musicas").Elements("Musica")
@@ -27,7 +27,7 @@ namespace AluraTunes
             }
         }
 
-        private static void ListarGeneros(XElement element)
+        public static void ListarGeneros(XElement element)
         {
             var queryXML = from generos in element.Element("Generos").Elements("Genero")
                            select generos;
@@ -38,7 +38,7 @@ namespace AluraTunes
             }
         }
 
-        private static XElement CarregarXML()
+        public static XElement CarregarXML()
         {
             return XElement.Load(@"XML\AluraTunes.xml");
         }

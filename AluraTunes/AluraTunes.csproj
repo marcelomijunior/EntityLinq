@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -54,11 +54,81 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.6\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.6\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,49 +138,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Album.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\AluraTunes.Context.cs">
+    <Compile Include="Data\AluraTunesDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AluraTunes.Context.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\AluraTunes.cs">
+    <Compile Include="Data\AluraTunesDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\AluraTunes.Designer.cs">
+    <Compile Include="Data\AluraTunesDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AluraTunes.edmx</DependentUpon>
+      <DependentUpon>AluraTunesDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\Artista.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Cliente.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Faixa.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Funcionario.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Genero.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\ItemNotaFiscal.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\NotaFiscal.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Playlist.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\TipoMidia.cs">
-      <DependentUpon>AluraTunes.tt</DependentUpon>
+      <DependentUpon>AluraTunesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="LinqToEntities.cs" />
     <Compile Include="LinqToObj.cs" />
@@ -120,39 +190,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Data\AluraTunes.edmx">
+    <EntityDeploy Include="Data\AluraTunesDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AluraTunes.Designer.cs</LastGenOutput>
+      <LastGenOutput>AluraTunesDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\AluraTunes.edmx.diagram">
-      <DependentUpon>AluraTunes.edmx</DependentUpon>
+    <None Include="Data\AluraTunesDB.edmx.diagram">
+      <DependentUpon>AluraTunesDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AluraTunesDB.mdf">
+    <Content Include="AluraTunes.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AluraTunesDB_log.ldf">
+    <Content Include="AluraTunes_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AluraTunesDB.mdf</DependentUpon>
+      <DependentUpon>AluraTunes.mdf</DependentUpon>
     </Content>
-    <Content Include="Data\AluraTunes.Context.tt">
+    <Content Include="Data\AluraTunes.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\AluraTunesDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AluraTunes.Context.cs</LastGenOutput>
-      <DependentUpon>AluraTunes.edmx</DependentUpon>
+      <DependentUpon>AluraTunesDB.edmx</DependentUpon>
+      <LastGenOutput>AluraTunesDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\AluraTunes.tt">
+    <Content Include="Data\AluraTunesDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AluraTunes.edmx</DependentUpon>
-      <LastGenOutput>AluraTunes.cs</LastGenOutput>
+      <DependentUpon>AluraTunesDB.edmx</DependentUpon>
+      <LastGenOutput>AluraTunesDB.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\AluraTunesDB.mdf">
+    <Content Include="Data\AluraTunes_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\AluraTunesDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AluraTunesDB.mdf</DependentUpon>
+      <DependentUpon>AluraTunes.mdf</DependentUpon>
     </Content>
     <Content Include="XMLs\AluraTunes.xml" />
   </ItemGroup>

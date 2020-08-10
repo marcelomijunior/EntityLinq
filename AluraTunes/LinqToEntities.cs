@@ -11,7 +11,7 @@ namespace AluraTunes
     {
         //criar uma consulta que deve trazer as faixas de músicas a partir de dois parâmetros. 
         //nome do artista e título do álbum.
-        private static void PesquisarFaixas(AluraTunesDBEntities context, string nomeArtista, string nomeAlbum)
+        public static void PesquisarFaixas(AluraTunesDBEntities context, string nomeArtista, string nomeAlbum)
         {
             var query = from faixa in context.Faixas
                         where faixa.Album.Artista.Nome.Contains(nomeArtista)
@@ -28,7 +28,7 @@ namespace AluraTunes
             }
         }
 
-        private static void PesquisarArtistas(AluraTunesDBEntities context, string nomeArtista)
+        public static void PesquisarArtistas(AluraTunesDBEntities context, string nomeArtista)
         {
             //pesquisando artistas e albuns do artista com join.
             var queryPesquisa1 = from artista in context.Artistas
@@ -55,7 +55,7 @@ namespace AluraTunes
             }
         }
 
-        private static void ConsultarGeneros(AluraTunesDBEntities context)
+        public static void PesquisarGeneros(AluraTunesDBEntities context)
         {
             var queryGeneros = from genero in context.Generos
                                select genero;
@@ -66,20 +66,20 @@ namespace AluraTunes
             }
         }
 
-        private static void ConsultarFaixas(AluraTunesDBEntities context)
-        {
-            var queryFaixaDeGenero = from genero in context.Generos
-                                     join faixa in context.Faixas on genero.GeneroId equals faixa.GeneroId
-                                     select new { faixa, genero };
+        //public static void PesquisarFaixas(AluraTunesDBEntities context)
+        //{
+        //    var queryFaixaDeGenero = from genero in context.Generos
+        //                             join faixa in context.Faixas on genero.GeneroId equals faixa.GeneroId
+        //                             select new { faixa, genero };
 
-            queryFaixaDeGenero = queryFaixaDeGenero.Take(10);
+        //    queryFaixaDeGenero = queryFaixaDeGenero.Take(10);
 
-            context.Database.Log = Console.WriteLine;
+        //    context.Database.Log = Console.WriteLine;
 
-            foreach (var item in queryFaixaDeGenero)
-            {
-                Console.WriteLine("{0}\t{1}", item.faixa.Nome, item.genero.Nome);
-            }
-        }
+        //    foreach (var item in queryFaixaDeGenero)
+        //    {
+        //        Console.WriteLine("{0}\t{1}", item.faixa.Nome, item.genero.Nome);
+        //    }
+        //}
     }
 }

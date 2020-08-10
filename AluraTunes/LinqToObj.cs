@@ -8,7 +8,7 @@ namespace AluraTunes
 {
     class LinqToObj
     {
-        private static void ConsultarGeneros(List<Genero> generos)
+        public static void ConsultarGeneros(List<Genero> generos)
         {
             //foreach (var genero in generos)
             //{
@@ -28,7 +28,7 @@ namespace AluraTunes
             }
         }
 
-        private static void ConsultarMusicas(List<Genero> generos, List<Musica> musicas)
+        public static void ConsultarMusicas(List<Genero> generos, List<Musica> musicas)
         {
             var queryMusicas = from musica in musicas
                                join genero in generos on musica.GeneroId equals genero.Id
@@ -40,7 +40,7 @@ namespace AluraTunes
             }
         }
 
-        private static List<Musica> CriarMusicas()
+        public static List<Musica> CriarMusicas()
         {
 
             //listar músicas
@@ -52,7 +52,7 @@ namespace AluraTunes
             };
         }
 
-        private static List<Genero> CriarGeneros()
+        public static List<Genero> CriarGeneros()
         {
 
 

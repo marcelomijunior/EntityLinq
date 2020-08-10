@@ -16,7 +16,7 @@ namespace AluraTunes.Data
     public partial class AluraTunesDBEntities : DbContext
     {
         public AluraTunesDBEntities()
-            : base("name=AluraTunesDBEntities")
+            : base("name=AluraTunesEntities")
         {
         }
     
