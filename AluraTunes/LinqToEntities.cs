@@ -26,10 +26,16 @@ namespace AluraTunes
             //ordenando por album e depois no album pelo nome das músicas.
             //query = query.OrderBy(q => q.Album.Titulo).ThenBy(q => q.Nome);
 
+            var quantidade = query.Count();
+            //ou
+            //var quantidade = context.Faixas.Count(faixa => faixa.Album.Artista.Nome == nomeArtista);
+
             foreach (var q in query)
             {
                 Console.WriteLine("{0}\t{1}", q.Album.Titulo.PadRight(50), q.Nome);
             }
+
+            Console.WriteLine("\nMúsicas encontradas: {0}", quantidade);
         }
 
         public static void PesquisarArtistas(AluraTunesDBEntities context, string nomeArtista)
@@ -85,5 +91,24 @@ namespace AluraTunes
         //        Console.WriteLine("{0}\t{1}", item.faixa.Nome, item.genero.Nome);
         //    }
         //}
+
+        public static void ConsultarTotalDeVendasDoArtista(AluraTunesDBEntities context, string nomeArtista)
+        {
+            var queryItensNF = from itensNF in context.ItemNotaFiscals
+                               where itensNF.Faixa.Album.Artista.Nome == nomeArtista
+                               group itensNF by itensNF.Faixa.Album into itensAgrupados
+                               let vendasPorAlbum = itensAgrupados.Sum(inf => inf.Quantidade * inf.PrecoUnitario)
+                               orderby vendasPorAlbum descending
+                               select new
+                               {
+                                   AlbumTitulo = itensAgrupados.Key.Titulo,
+                                   TotalVendas = vendasPorAlbum
+                               };
+
+            foreach (var itemNF in queryItensNF)
+            {
+                Console.WriteLine("{0}\t{1}", itemNF.AlbumTitulo.PadRight(50), itemNF.TotalVendas);
+            }
+        }
     }
 }
