@@ -11,9 +11,16 @@ namespace AluraTunes
     {
         static void Main(string[] args)
         {
+            using (var context = new AluraTunesDBEntities())
+            {
+                context.Database.Log = Console.WriteLine;
+            }
+
             Console.WriteLine();
             Console.WriteLine("Aperte a tecla 'enter' para finalizar a execução...");
             Console.ReadKey();
         }
+
+        
     }
 }

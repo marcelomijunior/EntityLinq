@@ -110,5 +110,22 @@ namespace AluraTunes
                 Console.WriteLine("{0}\t{1}", itemNF.AlbumTitulo.PadRight(50), itemNF.TotalVendas);
             }
         }
+
+        private static void GerarRelatorioDeVendas(AluraTunesDBEntities context)
+        {
+            var vendas = (from nf in context.NotaFiscals
+                          group nf by 1 into agrupado
+                          select new
+                          {
+                              MaiorVenda = agrupado.Max(nf => nf.Total),
+                              MenorVenda = agrupado.Min(nf => nf.Total),
+                              MediaVenda = agrupado.Average(nf => nf.Total)
+                          })
+                                         .SingleOrDefault();
+
+            Console.WriteLine("Maior venda da loja: R$ {0}", vendas.MaiorVenda);
+            Console.WriteLine("Media de vendas da loja: R$ {0}", vendas.MediaVenda);
+            Console.WriteLine("Menor venda da loja: R$ {0}", vendas.MenorVenda);
+        }
     }
 }
