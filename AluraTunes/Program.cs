@@ -13,7 +13,6 @@ namespace AluraTunes
         {
             using (var context = new AluraTunesDBEntities())
             {
-                context.Database.Log = Console.WriteLine;
             }
 
             Console.WriteLine();
@@ -21,6 +20,14 @@ namespace AluraTunes
             Console.ReadKey();
         }
 
-        
+        private static decimal Mediana(IQueryable<NotaFiscal> notasFiscais)
+        {
+            var elementoCentral_1 = notasFiscais.OrderBy(nf => nf.Total).Skip(notasFiscais.Count() / 2).First();
+            var elementoCentral_2 = notasFiscais.OrderBy(nf => nf.Total).Skip((notasFiscais.Count() - 1) / 2).First();
+
+            var mediana = (elementoCentral_1.Total + elementoCentral_2.Total) / 2;
+
+            return mediana;
+        }
     }
 }

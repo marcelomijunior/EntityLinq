@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -111,7 +112,7 @@ namespace AluraTunes
             }
         }
 
-        private static void GerarRelatorioDeVendas(AluraTunesDBEntities context)
+        public static void GerarRelatorioDeVendas(AluraTunesDBEntities context)
         {
             var vendas = (from nf in context.NotaFiscals
                           group nf by 1 into agrupado
@@ -121,11 +122,26 @@ namespace AluraTunes
                               MenorVenda = agrupado.Min(nf => nf.Total),
                               MediaVenda = agrupado.Average(nf => nf.Total)
                           })
-                                         .SingleOrDefault();
+                          .SingleOrDefault();
 
             Console.WriteLine("Maior venda da loja: R$ {0}", vendas.MaiorVenda);
             Console.WriteLine("Media de vendas da loja: R$ {0}", vendas.MediaVenda);
             Console.WriteLine("Menor venda da loja: R$ {0}", vendas.MenorVenda);
+        }
+    }
+
+    public static class LinqExtensions
+    {
+        public static decimal Mediana<TSource>(this IQueryable<TSource> source, Expression<Func<TSource, decimal>> selector)
+        {
+            var funcSeletor = selector.Compile();
+
+            var elementoCentral_1 = source.Select(funcSeletor).OrderBy(total => total).Skip(source.Count() / 2).First();
+            var elementoCentral_2 = source.Select(funcSeletor).OrderBy(total => total).Skip((source.Count() - 1) / 2).First();
+
+            var mediana = (elementoCentral_1 + elementoCentral_2) / 2;
+
+            return mediana;
         }
     }
 }
